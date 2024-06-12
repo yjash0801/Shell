@@ -1,7 +1,10 @@
 #!/bin/bash
 
-echo "Jashwanth: Hello there Yarrarapu, I am DevOps Engineer"
-echo "Yarrarapu: Hello there Jashwanth, I am SR Engineer"
-echo "Jashwanth: Oh, That's nice Yarrarapu"
-echo "Yarrarapu: Nice to meet you Jashwanth"
+PERSON1=Jashwanth
+PERSON2=Yarrarapu
+
+echo "$PERSON1: Hello there $PERSON2, I am DevOps Engineer"
+echo "$PERSON2: Hello there $PERSON1, I am SR Engineer"
+echo "$PERSON1: Oh, That's nice $PERSON2"
+echo "$PERSON2: Nice to meet you $PERSON1"
 
