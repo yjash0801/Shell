@@ -32,9 +32,16 @@ do
     yum list installed $package &>> $LOGFILE
     if [ $? -ne 0 ]
     then
-        yum install $package -y &>> $LOGFILE
-        VALIDATE $? $package
+        echo -e "The package $package is not installed, preparing for installtion"
+        echo "                                                                                   " &>> $LOGFILE
+        echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< INSTALLING $package >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" &>> $LOGFILE
+        echo "                                                                                   " &>> $LOGFILE
+        dnf install $package -y &>> $LOGFILE
+        VALIDATE $? "$package "
     else
-        echo -e "$Y The $package is already installed, proceeding for next installation."
+        echo "                                                                                   " &>> $LOGFILE
+        echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< $package ALREADY INSTALLED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" &>> $LOGFILE
+        echo "                                                                                   " &>> $LOGFILE
+        echo -e "$Y Package $package is already installed,$N proceeding with next"
     fi
 done
