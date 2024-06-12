@@ -13,9 +13,9 @@ LOGFILE=/tmp/$0-$DATE.log
 VALIDATE() {
     if [ $1 -ne 0 ]
     then
-        echo -e "Installation $2 $R failed"
+        echo -e "$N Installation $2 $R failed"
     else
-        echo -e "Installation $2 $G sucess"
+        echo -e "$N Installation $2 $G sucess"
     fi
 }
 
