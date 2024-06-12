@@ -11,9 +11,9 @@ N="\e[0m"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "installation $2 $R failed"
+        echo -e "installation $2 $R failed"
     else
-        echo "installation $2 $G sucess"
+        echo -e "installation $2 $G sucess"
     fi
 }
 
