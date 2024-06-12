@@ -3,11 +3,11 @@
 USERID=$(id -u)
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then
-        echo "MySQL installation failed"
+        echo "MySQL installation $2 failed"
     else
-        echo "MySQL installation sucess"
+        echo "MySQL installation $2 sucess"
     fi
 }
 
@@ -21,8 +21,8 @@ fi
 
 yum install mysql -y
 
-VALIDATE
+VALIDATE $? "MySQL"
 
 yum install git -y
 
-VALIDATE
+VALIDATE $? "git"
