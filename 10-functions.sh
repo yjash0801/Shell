@@ -2,6 +2,15 @@
 
 USERID=$(id -u)
 
+VALIDATE(){
+    if [ $? -ne 0 ]
+    then
+        echo "MySQL installation failed"
+    else
+        echo "MySQL installation sucess"
+    fi
+}
+
 if [ $USERID -ne 0 ]
 then
     echo "root permission required, enter sudo su -"
@@ -12,18 +21,8 @@ fi
 
 yum install mysql -y
 
-if [ $? -ne 0 ]
-then
-    echo "MySQL installation failed"
-else
-    echo "MySQL installation sucess"
-fi
+VALIDATE
 
 yum install git -y
 
-if [ $? -ne 0 ]
-then
-    echo "MySQL installation failed"
-else
-    echo "MySQL installation sucess"
-fi
+VALIDATE
