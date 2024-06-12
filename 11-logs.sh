@@ -19,10 +19,10 @@ VALIDATE(){
 
 if [ $USERID -ne 0 ]
 then
-    echo "root permission required, enter sudo su -"
+    echo -e "root permission required, enter sudo su -"
     exit 1
 else
-    echo "script executed on super user(root)"
+    echo -e "script executed on super user(root)"
 fi
 
 yum install mysql -y &>> $LOGFILE
