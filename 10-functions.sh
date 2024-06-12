@@ -5,9 +5,9 @@ USERID=$(id -u)
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "MySQL installation $2 failed"
+        echo "installation $2 failed"
     else
-        echo "MySQL installation $2 sucess"
+        echo "installation $2 sucess"
     fi
 }
 
