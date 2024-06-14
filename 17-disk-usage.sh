@@ -13,9 +13,11 @@ do
     diskname=$(echo $line | awk '{print $1F}')
     if [ $usage -ge $DISK_THRESHOLD ]
     then
-        message+="${R}High disk usage on${N} $diskname usage percent: ${R}$usage%${N}\n"
+        message+="${R}High disk usage on${N} $diskname usage percent: ${R}$usage%${N} <br>"
     fi
 done <<< $DISK_USAGE
 
 echo -e "Message: $message"
-echo "$message" | mail -s "High Disk Usage" jashwanthya6@gmail.com
+#echo "$message" | mail -s "High Disk Usage" jashwanthya6@gmail.com
+
+sh mail.sh "DevOps Team" "High Disk Usage" "$message" "ALERT: High Disk Usage" "jashwanthya6@gmail.com"
