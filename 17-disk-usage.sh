@@ -17,4 +17,4 @@ do
     fi
 done <<< $DISK_USAGE
 
-echo -e "Message: $message"
+echo -e "Message: $message" | mail -s "message" jashwanthya6@gmail.com"
