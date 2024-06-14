@@ -18,7 +18,7 @@ then
     echo -e "${R}The Directory doesn't exist.${N}"
 fi
 
-FILES_TO_DELETE=$(find . -type f -name "*.log" -mtime +14)
+FILES_TO_DELETE=$(find $APPLOG -type f -name "*.log" -mtime +14)
 
 while IFS= read -r lines
 do
