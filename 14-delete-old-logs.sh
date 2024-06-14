@@ -1,8 +1,8 @@
 #!/bin/bash
 
-APPLOG=/tmp/shell-logs
+APPLOG="/tmp/shell-logs"
 DATE=$(date +%F:%H:%M:%S)
-LOGDIR=/home/centos/Shell_Logs/
+LOGDIR=/home/centos/Shell_Logs
 DELETED_LOGS=$LOGDIR/$(basename $0)-$DATE.log
 
 
