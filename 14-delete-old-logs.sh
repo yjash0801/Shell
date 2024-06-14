@@ -1,12 +1,6 @@
 #!/bin/bash
 
 APPLOG="/tmp/shell-logs"
-DATE=$(date +%F:%H:%M:%S)
-LOGDIR=/home/centos/Shell_Logs
-DELETED_LOGS=$LOGDIR/$(basename $0)-$DATE.log
-
-
-#exec &> $LOGDIR
 
 R="\e[31m"
 G="\e[32m"
@@ -23,5 +17,5 @@ FILES_TO_DELETE=$(find $APPLOG -type f -name "*.log" -mtime +14)
 while IFS= read -r line
 do
     echo "Deleting file: $line"
-    rm -rf $line &>> $DELETED_LOGS
+    rm -rf $line
 done <<< $FILES_TO_DELETE
