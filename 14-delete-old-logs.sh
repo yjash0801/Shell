@@ -17,10 +17,10 @@ then
     echo -e "${R}The Directory doesn't exist."
 fi
 
-FILES-TO-DELETE=$(find . -type f -name "*.log" -mtime +14)
+FILES_TO_DELETE=$(find . -type f -name "*.log" -mtime +14)
 
 while IFS= read -r lines
 do
     echo "Deleting file: $line"
     #rm -rf $line
-done >>> $FILES-TO-DELETE
+done >>> $FILES_TO_DELETE
