@@ -12,7 +12,7 @@ do
     diskname=$(df -hT | grep -vE "tmp|File"| awk '{print $1F}')
     if [ $line -gt 0 ]
     then
-        message+="${R}High disk usage on${N}$diskname: usage percent: ${R}$line%${N}\n"
+        message+="${R}High disk usage on${N} $diskname usage percent: ${R}$line%${N}\n"
     fi
 done <<< $DISK_USAGE
 
