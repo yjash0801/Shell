@@ -15,7 +15,7 @@ N="\e[0m"
 
 if [ ! -d  $APPLOG ]
 then
-    echo -e "${R}The Directory doesn't exist."
+    echo -e "${R}The Directory doesn't exist.${N}"
 fi
 
 FILES_TO_DELETE=$(find . -type f -name "*.log" -mtime +14)
