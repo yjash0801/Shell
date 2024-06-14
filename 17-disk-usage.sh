@@ -13,7 +13,7 @@ do
     diskname=$(echo $line | awk '{print $1F}')
     if [ $usage -gt $DISK_THRESHOLD ]
     then
-        message+="${R}High disk usage on${N} $diskname usage percent: ${R}$line%${N}\n"
+        message+="${R}High disk usage on${N} $diskname usage percent: ${R}$usage%${N}\n"
     fi
 done <<< $DISK_USAGE
 
