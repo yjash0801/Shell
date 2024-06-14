@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep -vE "tmp|File")
-DISK_THRESHOLD=1
+DISK_THRESHOLD=0
 message=""
 
 R="\e[31m"
@@ -13,7 +13,7 @@ do
     diskname=$(echo $line | awk '{print $1F}')
     if [ $usage -ge $DISK_THRESHOLD ]
     then
-        message+="High disk usage on $diskname usage percent: $usage <br>"
+        message+="High disk usage on $diskname usage percent: $usage% <br>"
     fi
 done <<< $DISK_USAGE
 
