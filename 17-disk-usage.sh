@@ -18,4 +18,4 @@ do
 done <<< $DISK_USAGE
 
 echo -e "Message: $message"
-echo -e "$message" | mail -s "High Disk Usage" jashwanthya6@gmail.com
+echo "$message" | mail -s "High Disk Usage" jashwanthya6@gmail.com
