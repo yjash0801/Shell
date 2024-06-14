@@ -24,4 +24,4 @@ while IFS= read -r lines
 do
     echo "Deleting file: $line"
     #rm -rf $line &>> $DELETED_LOGS
-done >>> $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE
