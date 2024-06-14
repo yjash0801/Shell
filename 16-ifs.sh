@@ -14,5 +14,5 @@ fi
 
 while IFS=":" read -r username password userid groupid User_ID_Info hdirectory shell
 do
-    echo "${G}username${N}:$username | ${G}password${N}:$username | ${G}userid${N}:$userid | ${G}groupid${N}:$groupid | ${G}User_ID_Info${N}:$User_ID_Info | ${G}hdirectory${N}:$hdirectory | ${G}shell${N}:$shell"
+    echo -e "${G}username${N}:$username | ${G}password${N}:$username | ${G}userid${N}:$userid | ${G}groupid${N}:$groupid | ${G}User_ID_Info${N}:$User_ID_Info | ${G}hdirectory${N}:$hdirectory | ${G}shell${N}:$shell"
 done < $FILE
