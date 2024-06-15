@@ -6,7 +6,7 @@ WISHES="Good Morning"
 USAGE(){
     echo "USAGE:: $(basename $0) -n <name> -w <wishes>"
     echo "Options::"
-    echo " -n The name should be specified"
+    echo " -n The name should be specified (Mandatory Argument)"
     echo " -w The wishes shoudl be specified (Optional) default is Good Morning"
     echo " -h Display Help and exit"
 }
@@ -25,7 +25,7 @@ done
 if [ -z "$NAME" ] 
 then
     #echo "ERROR: Both -n and -w are mandatory options."
-    echo "ERROR: -n and -w is mandatory."
+    echo "ERROR: -n is mandatory."
     USAGE
     exit 1
 fi
