@@ -29,19 +29,19 @@ fi
 
 for package in $@
 do
-    yum list installed $package &>> $LOGFILE
+    yum list installed $package 
     if [ $? -ne 0 ]
     then
         echo -e "The package $package is not installed, preparing for installtion"
-        echo "                                                                                   " &>> $LOGFILE
-        echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< INSTALLING $package >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" &>> $LOGFILE
-        echo "                                                                                   " &>> $LOGFILE
-        dnf install $package -y &>> $LOGFILE
+        echo "                                                                                   " 
+        echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< INSTALLING $package >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" 
+        echo "                                                                                   " 
+        dnf install $package -y 
         VALIDATE $? "$package "
     else
-        echo "                                                                                   " &>> $LOGFILE
-        echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< $package ALREADY INSTALLED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" &>> $LOGFILE
-        echo "                                                                                   " &>> $LOGFILE
+        echo "                                                                                   " 
+        echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< $package ALREADY INSTALLED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" 
+        echo "                                                                                   " 
         echo -e "$Y Package $package is already installed,$N proceeding with next"
     fi
 done
